@@ -16,7 +16,9 @@ import {
 const SHARE_W = 1080;
 const SHARE_H = 1350;
 const SLOGAN = 'FORM of the week';
-const TAGLINE = 'set in ink · ' + new Date().getFullYear();
+function tagline() {
+  return `set in ink · ${new Date().getFullYear()}`;
+}
 
 const CREAM = '#ede8e0';
 const INK = '#1a1714';
@@ -178,7 +180,7 @@ function drawFooter(ctx) {
   ctx.textAlign = 'right';
   ctx.font = '400 18px "Inter", system-ui, sans-serif';
   ctx.fillStyle = INK_FAINT;
-  ctx.fillText(TAGLINE.toUpperCase(), SHARE_W - 80, SHARE_H - 44);
+  ctx.fillText(tagline().toUpperCase(), SHARE_W - 80, SHARE_H - 44);
 }
 
 /**

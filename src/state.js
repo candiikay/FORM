@@ -1,15 +1,53 @@
 /** Schedule, picks, lightweight engagement counters, weekly archive. */
 
+import { weekIdForDate } from './week.js';
+
 let games = [];
 const picks = Object.create(null);
 
 const STREAK_KEY = 'form_streak_days';
 const POINTS_KEY = 'form_points';
 const HISTORY_KEY = 'form_history_v1';
+const PICKS_KEY_PREFIX = 'form_picks_v1_';
+
+function picksStorageKey() {
+  return `${PICKS_KEY_PREFIX}${weekIdForDate(new Date())}`;
+}
+
+function readPersistedPicks() {
+  try {
+    const raw = localStorage.getItem(picksStorageKey());
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return null;
+    const out = {};
+    for (const [id, v] of Object.entries(parsed)) {
+      if (v === 'left' || v === 'right') out[id] = v;
+    }
+    return out;
+  } catch {
+    return null;
+  }
+}
+
+function writePersistedPicks() {
+  try {
+    localStorage.setItem(picksStorageKey(), JSON.stringify({ ...picks }));
+  } catch {
+    /* quota */
+  }
+}
 
 export function initSchedule(schedule) {
-  games = schedule.slice();
+  games = Array.isArray(schedule) ? schedule.slice() : [];
   for (const k of Object.keys(picks)) delete picks[k];
+  const persisted = readPersistedPicks();
+  if (persisted) {
+    const validIds = new Set(games.map((g) => String(g.id)));
+    for (const [id, dir] of Object.entries(persisted)) {
+      if (validIds.has(String(id))) picks[id] = dir;
+    }
+  }
 }
 
 export function getGames() {
@@ -18,10 +56,43 @@ export function getGames() {
 
 export function setPick(gameId, direction) {
   picks[gameId] = direction;
+  writePersistedPicks();
 }
 
 export function getPicks() {
   return { ...picks };
+}
+
+/** Rehydrate picks from an external source (e.g. Supabase row set for the
+ *  current week). Accepts the direction-string shape `{gameId: 'left'|'right'}`
+ *  or the wrapped `{gameId: {pick: 'left'|'right'}}` shape. Unknown game ids
+ *  are ignored; known ids overwrite in-memory state and persist to storage. */
+export function hydratePicks(remotePicks) {
+  if (!remotePicks || typeof remotePicks !== 'object') return;
+  const validIds = games.length ? new Set(games.map((g) => String(g.id))) : null;
+  let changed = false;
+  for (const [id, v] of Object.entries(remotePicks)) {
+    let dir = null;
+    if (v === 'left' || v === 'right') dir = v;
+    else if (v && (v.pick === 'left' || v.pick === 'right')) dir = v.pick;
+    if (!dir) continue;
+    if (validIds && !validIds.has(String(id))) continue;
+    if (picks[id] !== dir) {
+      picks[id] = dir;
+      changed = true;
+    }
+  }
+  if (changed) writePersistedPicks();
+}
+
+/** Clear picks for the current week (used after a successful lock-in). */
+export function clearCurrentWeekPicks() {
+  for (const k of Object.keys(picks)) delete picks[k];
+  try {
+    localStorage.removeItem(picksStorageKey());
+  } catch {
+    /* ignore */
+  }
 }
 
 export function isFormComplete() {

@@ -11,7 +11,7 @@
  * cleared on activate.
  */
 
-const CACHE_VERSION = 'form-v1-2026-04-19-wall-redesign';
+const CACHE_VERSION = 'form-v1-2026-04-19-config-bypass';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
 
@@ -66,6 +66,12 @@ function isDataRequest(url) {
 
 function isShellRequest(url) {
   if (url.origin !== self.location.origin) return false;
+  // config.js is env-injected at deploy time (see scripts/build-config.mjs).
+  // It must never be cache-first — otherwise rotating the Supabase anon key
+  // in Vercel env vars would leave installed PWAs stuck on the old key.
+  if (url.pathname === '/config.js' || url.pathname.endsWith('/config.js')) {
+    return false;
+  }
   return (
     url.pathname.endsWith('.html') ||
     url.pathname.endsWith('.css') ||

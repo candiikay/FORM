@@ -365,12 +365,21 @@ export async function fetchSchedule() {
 /**
  * Persist a week's picks.
  *
- * `payload.picks` is an object keyed by gameId → { pick: 'left' | 'right' }.
+ * `payload.picks` is an object keyed by gameId. The value may be either:
+ *   - a direction string: 'left' | 'right'          (current state.js shape)
+ *   - a wrapped object:   { pick: 'left' | 'right' } (legacy / server shape)
+ *
  * In dev / demo mode the call simply caches the payload to localStorage so
  * the rest of the app can read it back. When Supabase is configured the
  * picks are upserted into the `picks` table — one row per (user, week, game)
  * — keyed off the auth user's id and the current week_id.
  */
+function normalizePickDirection(info) {
+  if (info === 'left' || info === 'right') return info;
+  if (info && (info.pick === 'left' || info.pick === 'right')) return info.pick;
+  return null;
+}
+
 export async function submitPicks(payload) {
   const body = JSON.stringify(payload);
   try {
@@ -392,13 +401,18 @@ export async function submitPicks(payload) {
   const weekId = payload.weekId || weekIdForDate(new Date());
   const picks = payload.picks || {};
   const rows = Object.entries(picks)
-    .map(([gameId, info]) => ({
-      user_id: user.userId,
-      week_id: weekId,
-      game_id: String(gameId),
-      pick: info?.pick === 'right' ? 'right' : 'left',
-    }))
-    .filter((r) => r.pick === 'left' || r.pick === 'right');
+    .map(([gameId, info]) => {
+      const direction = normalizePickDirection(info);
+      return direction
+        ? {
+            user_id: user.userId,
+            week_id: weekId,
+            game_id: String(gameId),
+            pick: direction,
+          }
+        : null;
+    })
+    .filter(Boolean);
 
   if (rows.length === 0) return { ok: true, payload, persisted: 'local' };
 
