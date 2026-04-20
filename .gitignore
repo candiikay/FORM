@@ -1,0 +1,16 @@
+# Local runtime config (Supabase URL + anon key live here)
+config.js
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Server logs from dev.sh
+/tmp/form-server.log

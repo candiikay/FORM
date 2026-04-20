@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ede8e0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="FORM" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <title>Form · Atlas — Share cards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to the maker</a>
+  <div class="app-shell app-shell--wide">
+    <header class="masthead masthead--with-chip">
+      <a href="index.html" class="masthead__brand" aria-label="FORM — home">
+        <span class="masthead__mark">FORM</span>
+        <span class="masthead__edition">Atlas</span>
+      </a>
+      <div class="masthead__chip" data-identity-chip aria-label="Account"></div>
+    </header>
+
+    <nav class="page-nav" aria-label="Sections">
+      <a href="index.html" class="page-nav__link">Picks</a>
+      <a href="you.html" class="page-nav__link">You</a>
+      <a href="wall.html" class="page-nav__link">Wall</a>
+      <a href="atlas.html" class="page-nav__link page-nav__link--current" aria-current="page">Atlas</a>
+    </nav>
+
+    <main id="main-content" tabindex="-1"></main>
+  </div>
+
+  <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-dialog-title">
+    <article class="auth-dialog__inner">
+      <button type="button" class="auth-dialog__close" data-auth-close aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div id="auth-dialog-title" class="sr-only">Sign in</div>
+      <div data-auth-mount></div>
+    </article>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="config.js"></script>
+  <script type="module" src="src/main-atlas.js"></script>
+</body>
+</html>

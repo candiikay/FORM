@@ -1,0 +1,28 @@
+name: Ingest WNBA results
+
+on:
+  schedule:
+    # Every two hours, year-round. ESPN ratelimits but does not require auth.
+    - cron: "17 */2 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install ingest dependencies
+        run: npm install --no-audit --no-fund @supabase/supabase-js@2
+
+      - name: Run ingest
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          INGEST_DAYS: "4"
+        run: node scripts/ingest-results.mjs

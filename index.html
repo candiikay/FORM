@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ede8e0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="FORM" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <title>Form · Picks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to picks</a>
+  <div class="app-shell">
+    <header class="masthead masthead--with-chip">
+      <a href="index.html" class="masthead__brand" aria-label="FORM — home">
+        <span class="masthead__mark">FORM</span>
+        <span class="masthead__edition">This week</span>
+      </a>
+      <div class="masthead__chip" data-identity-chip aria-label="Account"></div>
+    </header>
+
+    <nav class="page-nav" aria-label="Sections">
+      <a href="index.html" class="page-nav__link page-nav__link--current" aria-current="page">Picks</a>
+      <a href="you.html" class="page-nav__link">You</a>
+      <a href="wall.html" class="page-nav__link">Wall</a>
+      <a href="atlas.html" class="page-nav__link">Atlas</a>
+    </nav>
+
+    <p class="week-range" id="week-label"></p>
+    <span id="main-content" tabindex="-1" class="sr-only">Picks</span>
+    <div class="subline">
+      <span id="streak-meta" class="streak-meta"></span>
+    </div>
+
+    <p class="pick-hint" id="pick-hint" aria-hidden="true">← tap a side to pick &nbsp;·&nbsp; swipe →</p>
+
+    <div id="games-container" class="games-stack"></div>
+
+    <div class="form-narrative" role="region" aria-label="Set your form">
+      <div class="form-narrative__axis" aria-hidden="true"></div>
+      <footer class="cta-block">
+        <button
+          type="button"
+          class="set-action"
+          id="set-action"
+          aria-label="Lock in this week's form"
+        ><span class="set-action__text">Lock in form</span></button>
+        <button
+          type="button"
+          class="form-link"
+          id="view-form"
+          aria-label="View your form"
+          hidden
+        ><span class="form-link__text">View your form</span><span class="form-link__arrow" aria-hidden="true">↗</span></button>
+      </footer>
+    </div>
+  </div>
+
+  <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
+    <article class="preview">
+      <header class="preview__head">
+        <p id="preview-title" class="preview__title">Your form, this week</p>
+        <button type="button" class="preview__close" id="preview-close" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+      <div class="preview__canvas-wrap">
+        <canvas id="preview-canvas" class="preview__canvas" aria-label="A poster of your form"></canvas>
+      </div>
+      <div id="preview-save" class="preview__save" hidden></div>
+      <footer class="preview__actions">
+        <fieldset class="preview__output" aria-label="Output">
+          <legend class="preview__output-legend">Output</legend>
+          <label class="preview__output-opt">
+            <input type="radio" name="output-mode" value="still" checked />
+            <span>Still</span>
+          </label>
+          <label class="preview__output-opt">
+            <input type="radio" name="output-mode" value="moving" />
+            <span>Moving</span>
+          </label>
+        </fieldset>
+        <button type="button" class="preview__share" id="share-action" aria-label="Share your form">
+          <span class="preview__share-text">Share</span>
+          <span class="preview__share-kicker">form of the week</span>
+        </button>
+      </footer>
+    </article>
+  </dialog>
+
+  <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-dialog-title">
+    <article class="auth-dialog__inner">
+      <button type="button" class="auth-dialog__close" data-auth-close aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div id="auth-dialog-title" class="sr-only">Sign in</div>
+      <div data-auth-mount></div>
+    </article>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="config.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

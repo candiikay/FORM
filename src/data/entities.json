@@ -1,0 +1,72 @@
+{
+  "people": [
+    { "id": "person-caitlin-clark",   "type": "person", "name": "Caitlin Clark",   "meta": { "role": "player", "wnba": ["fever"], "ncaa": ["iowa-hawkeyes"], "born": "2002-01-22" } },
+    { "id": "person-angel-reese",     "type": "person", "name": "Angel Reese",     "meta": { "role": "player", "wnba": ["sky"], "ncaa": ["maryland", "lsu-tigers"], "born": "2002-05-06" } },
+    { "id": "person-paige-bueckers",  "type": "person", "name": "Paige Bueckers",  "meta": { "role": "player", "ncaa": ["uconn-huskies"], "born": "2001-10-20" } },
+    { "id": "person-aja-wilson",      "type": "person", "name": "A'ja Wilson",     "meta": { "role": "player", "wnba": ["aces"], "ncaa": ["south-carolina-gamecocks"], "born": "1996-08-08" } },
+    { "id": "person-breanna-stewart", "type": "person", "name": "Breanna Stewart", "meta": { "role": "player", "wnba": ["storm", "liberty"], "ncaa": ["uconn-huskies"], "born": "1994-08-27" } },
+    { "id": "person-sabrina-ionescu", "type": "person", "name": "Sabrina Ionescu", "meta": { "role": "player", "wnba": ["liberty"], "ncaa": ["oregon"], "born": "1997-12-06" } },
+    { "id": "person-kelsey-plum",     "type": "person", "name": "Kelsey Plum",     "meta": { "role": "player", "wnba": ["aces"], "ncaa": ["washington"], "born": "1994-08-24" } },
+    { "id": "person-sue-bird",        "type": "person", "name": "Sue Bird",        "meta": { "role": "player", "wnba": ["storm"], "ncaa": ["uconn-huskies"], "born": "1980-10-16", "retired": "2022" } },
+    { "id": "person-diana-taurasi",   "type": "person", "name": "Diana Taurasi",   "meta": { "role": "player", "wnba": ["mercury"], "ncaa": ["uconn-huskies"], "born": "1982-06-11" } },
+    { "id": "person-lisa-leslie",     "type": "person", "name": "Lisa Leslie",     "meta": { "role": "player", "wnba": ["sparks"], "ncaa": ["usc"], "born": "1972-07-07", "retired": "2009" } },
+    { "id": "person-maya-moore",      "type": "person", "name": "Maya Moore",      "meta": { "role": "player", "wnba": ["lynx"], "ncaa": ["uconn-huskies"], "born": "1989-06-11" } },
+    { "id": "person-candace-parker",  "type": "person", "name": "Candace Parker",  "meta": { "role": "player", "wnba": ["sparks", "sky", "aces"], "ncaa": ["tennessee-vols"], "born": "1986-04-19" } },
+    { "id": "person-cynthia-cooper",  "type": "person", "name": "Cynthia Cooper",  "meta": { "role": "player", "wnba": ["comets"], "ncaa": ["usc"], "born": "1963-04-14" } },
+    { "id": "person-sheryl-swoopes",  "type": "person", "name": "Sheryl Swoopes",  "meta": { "role": "player", "wnba": ["comets"], "ncaa": ["texas-tech"], "born": "1971-03-25" } },
+    { "id": "person-elena-delle-donne","type":"person", "name": "Elena Delle Donne","meta": { "role": "player", "wnba": ["mystics"], "ncaa": ["delaware"], "born": "1989-09-05" } },
+    { "id": "person-pat-summitt",     "type": "person", "name": "Pat Summitt",     "meta": { "role": "coach", "team": "tennessee-vols", "born": "1952-06-14", "died": "2016-06-28" } },
+    { "id": "person-dawn-staley",     "type": "person", "name": "Dawn Staley",     "meta": { "role": "coach", "team": "south-carolina-gamecocks", "born": "1970-05-04" } },
+    { "id": "person-geno-auriemma",   "type": "person", "name": "Geno Auriemma",   "meta": { "role": "coach", "team": "uconn-huskies", "born": "1954-03-23" } },
+    { "id": "person-kim-mulkey",      "type": "person", "name": "Kim Mulkey",      "meta": { "role": "coach", "team": "lsu-tigers", "born": "1962-05-17" } },
+    { "id": "person-tara-vandeveer",  "type": "person", "name": "Tara VanDerveer", "meta": { "role": "coach", "team": "stanford-cardinal", "born": "1953-06-26" } },
+    { "id": "person-cheryl-reeve",    "type": "person", "name": "Cheryl Reeve",    "meta": { "role": "coach", "team": "lynx" } },
+    { "id": "person-sedona-prince",   "type": "person", "name": "Sedona Prince",   "meta": { "role": "player", "ncaa": ["oregon", "tcu"] } },
+    { "id": "person-patsy-mink",      "type": "person", "name": "Patsy Mink",      "meta": { "role": "legislator", "born": "1927-12-06", "died": "2002-09-28" } }
+  ],
+  "teams": [
+    { "id": "fever",     "type": "team", "name": "Indiana Fever",     "meta": { "league": "wnba",  "founded": "2000", "palette": ["#FFCD00", "#002D62", "#E03A3E"] } },
+    { "id": "liberty",   "type": "team", "name": "New York Liberty",  "meta": { "league": "wnba",  "founded": "1997", "palette": ["#86CEBC", "#000000", "#FFFFFF"] } },
+    { "id": "sparks",    "type": "team", "name": "Los Angeles Sparks","meta": { "league": "wnba",  "founded": "1997", "palette": ["#552583", "#FDB927", "#000000"] } },
+    { "id": "storm",     "type": "team", "name": "Seattle Storm",     "meta": { "league": "wnba",  "founded": "2000", "palette": ["#2C5234", "#FE5000", "#FFC72C"] } },
+    { "id": "aces",      "type": "team", "name": "Las Vegas Aces",    "meta": { "league": "wnba",  "founded": "1997", "palette": ["#000000", "#A7A8AA", "#BA0C2F"] } },
+    { "id": "lynx",      "type": "team", "name": "Minnesota Lynx",    "meta": { "league": "wnba",  "founded": "1999", "palette": ["#236192", "#9EA2A2", "#78BE20"] } },
+    { "id": "sun",       "type": "team", "name": "Connecticut Sun",   "meta": { "league": "wnba",  "founded": "2003", "palette": ["#F05023", "#0A2240", "#A6A8AB"] } },
+    { "id": "mercury",   "type": "team", "name": "Phoenix Mercury",   "meta": { "league": "wnba",  "founded": "1997", "palette": ["#201747", "#E56020", "#63666A"] } },
+    { "id": "sky",       "type": "team", "name": "Chicago Sky",       "meta": { "league": "wnba",  "founded": "2006", "palette": ["#418FDE", "#FFCD00", "#000000"] } },
+    { "id": "dream",     "type": "team", "name": "Atlanta Dream",     "meta": { "league": "wnba",  "founded": "2008", "palette": ["#E31837", "#5091CD", "#FFFFFF"] } },
+    { "id": "mystics",   "type": "team", "name": "Washington Mystics","meta": { "league": "wnba",  "founded": "1998", "palette": ["#002B5C", "#E03A3E", "#C8102E"] } },
+    { "id": "wings",     "type": "team", "name": "Dallas Wings",      "meta": { "league": "wnba",  "founded": "1998", "palette": ["#0C2340", "#84A1C7", "#C4D600"] } },
+    { "id": "comets",    "type": "team", "name": "Houston Comets",    "meta": { "league": "wnba",  "founded": "1997", "folded": "2008", "palette": ["#CE1141", "#000000"] } },
+
+    { "id": "gsv",                      "type": "team", "name": "Golden State Valkyries",   "meta": { "league": "wnba", "founded": "2025", "palette": ["#5d2e8c", "#000000", "#ffc72c"] } },
+
+    { "id": "uconn-huskies",            "type": "team", "name": "UConn Huskies",            "meta": { "league": "ncaa", "palette": ["#000E2F", "#E4002B", "#A7A8AA"] } },
+    { "id": "tennessee-vols",           "type": "team", "name": "Tennessee Lady Vols",      "meta": { "league": "ncaa", "palette": ["#FF8200", "#58595B", "#FFFFFF"] } },
+    { "id": "south-carolina-gamecocks", "type": "team", "name": "South Carolina Gamecocks", "meta": { "league": "ncaa", "palette": ["#73000A", "#000000", "#FFFFFF"] } },
+    { "id": "stanford-cardinal",        "type": "team", "name": "Stanford Cardinal",        "meta": { "league": "ncaa", "palette": ["#8C1515", "#4D4F53", "#FFFFFF"] } },
+    { "id": "lsu-tigers",               "type": "team", "name": "LSU Tigers",               "meta": { "league": "ncaa", "palette": ["#461D7C", "#FDD023", "#FFFFFF"] } },
+    { "id": "iowa-hawkeyes",            "type": "team", "name": "Iowa Hawkeyes",            "meta": { "league": "ncaa", "palette": ["#000000", "#FFCD00", "#FFFFFF"] } },
+    { "id": "notre-dame",               "type": "team", "name": "Notre Dame Fighting Irish","meta": { "league": "ncaa", "palette": ["#0C2340", "#C99700", "#A6093D"] } },
+    { "id": "baylor-bears",             "type": "team", "name": "Baylor Bears",             "meta": { "league": "ncaa", "palette": ["#003015", "#FFB81C", "#FFFFFF"] } }
+  ],
+  "leagues": [
+    { "id": "wnba",  "type": "league", "name": "WNBA",  "meta": { "founded": "1996", "first_game": "1997-06-21" } },
+    { "id": "ncaa-women", "type": "league", "name": "NCAA Women's Basketball", "meta": { "first_tournament": "1982" } },
+    { "id": "aiaw", "type": "league", "name": "AIAW", "meta": { "active": "1971-1982" } },
+    { "id": "unrivaled", "type": "league", "name": "Unrivaled", "meta": { "founded": "2024", "first_season": "2025-01-17" } },
+    { "id": "au-basketball", "type": "league", "name": "Athletes Unlimited Basketball", "meta": { "founded": "2021" } },
+    { "id": "usa-basketball", "type": "org", "name": "USA Basketball", "meta": {} }
+  ],
+  "orgs": [
+    { "id": "ncaa", "type": "org", "name": "NCAA", "meta": {} },
+    { "id": "fiba", "type": "org", "name": "FIBA",  "meta": {} },
+    { "id": "doe-us", "type": "org", "name": "U.S. Department of Education", "meta": {} },
+    { "id": "nike",   "type": "org", "name": "Nike",   "meta": { "kind": "sponsor",  "palette": ["#000000", "#fa5400", "#ffffff"] } },
+    { "id": "reebok", "type": "org", "name": "Reebok", "meta": { "kind": "sponsor",  "palette": ["#cf102d", "#000000", "#ffffff"] } },
+    { "id": "adidas", "type": "org", "name": "Adidas", "meta": { "kind": "sponsor",  "palette": ["#000000", "#ffffff", "#bcbcbc"] } },
+    { "id": "espn",   "type": "org", "name": "ESPN",   "meta": { "kind": "media",    "palette": ["#cf2228", "#000000", "#ffffff"] } },
+    { "id": "nbc",    "type": "org", "name": "NBC",    "meta": { "kind": "media",    "palette": ["#0089d0", "#fcb711", "#cc004c"] } },
+    { "id": "amazon", "type": "org", "name": "Amazon Prime Video", "meta": { "kind": "media", "palette": ["#00a8e1", "#232f3e", "#ff9900"] } }
+  ]
+}

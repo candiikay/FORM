@@ -1,0 +1,34 @@
+{
+  "name": "FORM",
+  "short_name": "FORM",
+  "description": "Sports as art. Pick the week, see the room, compose the plate.",
+  "id": "/",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ede8e0",
+  "theme_color": "#ede8e0",
+  "lang": "en",
+  "categories": ["sports", "social", "lifestyle"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Picks",  "url": "./index.html",  "short_name": "Picks" },
+    { "name": "You",    "url": "./you.html",    "short_name": "You" },
+    { "name": "Wall",   "url": "./wall.html",   "short_name": "Wall" },
+    { "name": "Atlas",  "url": "./atlas.html",  "short_name": "Atlas" }
+  ]
+}

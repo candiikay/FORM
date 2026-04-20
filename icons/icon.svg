@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FORM">
+  <rect width="512" height="512" fill="#ede8e0"/>
+  <g fill="none" stroke="#1a1714" stroke-opacity="0.06">
+    <line x1="0" y1="128" x2="512" y2="128" stroke-width="1"/>
+    <line x1="0" y1="384" x2="512" y2="384" stroke-width="1"/>
+  </g>
+  <g fill="#1a1714" font-family="'Cormorant Garamond', Georgia, serif" font-weight="300" text-anchor="middle">
+    <text x="256" y="304" font-size="180" letter-spacing="36">FORM</text>
+  </g>
+  <g fill="#1a1714" font-family="'Inter', system-ui, sans-serif" font-size="20" letter-spacing="6" text-anchor="middle" opacity="0.55">
+    <text x="256" y="358">SET IN INK</text>
+  </g>
+</svg>
